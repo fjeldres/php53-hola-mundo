@@ -45,6 +45,7 @@ RUN echo 'LoadModule php5_module /usr/lib/apache2/modules/libphp5.so' \
     && a2dismod mpm_event \
     && a2enmod mpm_prefork
 
+RUN rm -f /var/www/html/index.html
 COPY index.php /var/www/html/index.php
 
 EXPOSE 80
